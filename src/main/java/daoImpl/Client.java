@@ -1,4 +1,4 @@
-package dao;
+package daoImpl;
 
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
@@ -9,10 +9,21 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import java.net.UnknownHostException;
 
-public class MongoDao implements ServletContextListener {
+public class Client implements ServletContextListener {
 
-    private static MongoClient mongoClient;
-    private static DB db;
+    private MongoClient mongoClient;
+    private DB db;
+    private String collectionName;
+
+    public Client(String collectionName){
+        this.collectionName = collectionName;
+        try {
+            mongoClient = new MongoClient();
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
@@ -39,5 +50,17 @@ public class MongoDao implements ServletContextListener {
 
     public DB getDb() {
         return db;
+    }
+
+    public void setDb(String idInstance) {
+        db = mongoClient.getDB(idInstance);
+    }
+
+    public void save(DBObject dbObject) {
+        db.getCollection(this.collectionName).save(dbObject);
+    }
+
+    public DBCollection getCollection() {
+        return db.getCollection(this.collectionName);
     }
 }
