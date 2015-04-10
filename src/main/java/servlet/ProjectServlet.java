@@ -16,5 +16,4 @@ public class ProjectServlet {
     private ProjectService projectServiceImpl = new ProjectServiceImpl();
     private static String idInstance;
 
-
 }
