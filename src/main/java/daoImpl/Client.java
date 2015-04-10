@@ -1,9 +1,6 @@
 package daoImpl;
 
-import com.mongodb.DB;
-import com.mongodb.DBCollection;
-import com.mongodb.DBObject;
-import com.mongodb.MongoClient;
+import com.mongodb.*;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -62,5 +59,10 @@ public class Client implements ServletContextListener {
 
     public DBCollection getCollection() {
         return db.getCollection(this.collectionName);
+    }
+
+    public void delete(String idInstance, String idObject) {
+        setDb(idInstance);
+        this.getCollection().remove(QueryBuilder.start(Constants.id).is(idObject).get());
     }
 }

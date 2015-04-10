@@ -1,10 +1,9 @@
 package servlet;
 
-import dao.ProjectServiceImpl;
+import serviceImpl.ProjectServiceImpl;
 import service.ProjectService;
 
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 
 
 /**
