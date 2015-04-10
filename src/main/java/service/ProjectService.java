@@ -16,4 +16,6 @@ public interface ProjectService {
     public void delete(String instance, String id);
 
     public List<Project> chargeAll(String instance);
+
+    public void update(String instance, String id, String name);
 }

@@ -34,5 +34,7 @@ public class ProjectServiceImpl implements ProjectService {
         return projectDAOimpl.chargeAll(instance);
     }
 
-
+    public void update(String instance, String id,String name){
+        projectDAOimpl.update(instance, id, name);
+    }
 }

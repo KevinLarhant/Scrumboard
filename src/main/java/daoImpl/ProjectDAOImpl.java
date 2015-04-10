@@ -59,4 +59,11 @@ public class ProjectDAOImpl implements ProjectDao {
         }
         return projects;
     }
+
+    public void update(String instance, String idProject, String name){
+        this.client.setDb(instance);
+
+        this.client.getCollection().update( new BasicDBObject(Constants.id, idProject),
+                new BasicDBObject("$set", new BasicDBObject(Constants.projectName, name)), true, false);
+    }
 }

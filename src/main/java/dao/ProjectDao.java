@@ -16,4 +16,6 @@ public interface ProjectDao {
     public void delete(String instance, String idProject);
 
     public List<Project> chargeAll(String instance);
+
+    public void update(String instance, String idProject, String name);
 }
