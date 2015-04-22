@@ -22,7 +22,6 @@ public class Client implements ServletContextListener {
     }
 
 
-    @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
         try {
             mongoClient = new MongoClient();
@@ -32,7 +31,6 @@ public class Client implements ServletContextListener {
         db = mongoClient.getDB("ScrumboardDb");
     }
 
-    @Override
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
         mongoClient.close();
     }

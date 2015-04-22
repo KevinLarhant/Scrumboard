@@ -14,22 +14,18 @@ public class ProjectServiceImpl implements ProjectService {
 
     private ProjectDao projectDAOimpl = new ProjectDAOImpl();
 
-    @Override
     public String chargeProject(String instance, String id) {
         return projectDAOimpl.charge(instance, id);
     }
 
-    @Override
     public void createProject(String instance, String name) {
         projectDAOimpl.createProject(instance, name);
     }
 
-    @Override
     public void delete(String instance, String id) {
         projectDAOimpl.delete(instance, id);
     }
 
-    @Override
     public List<Project> chargeAll(String instance) {
         return projectDAOimpl.chargeAll(instance);
     }
