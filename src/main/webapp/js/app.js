@@ -4,14 +4,14 @@ function postit(){
     var postit = "";
     postit='<div id='+idPostit+' class="postit">User story ' +
     '<span class="glyphicon glyphicon-arrow-right" onclick="goDone('+idPostit+')"></span>' +
-    '<span class="glyphicon glyphicon-remove" onclick="remove('+idPostit+')"></div>';
+    '<span class="glyphicon glyphicon-remove" onclick="deletePostit('+idPostit+')"></div>';
 
     idPostit++;
 
     $(".zoneUS").append(postit);
 }
 
-function remove(idPostit){
+function deletePostit(idPostit){
     var id = "#"+idPostit;
     $(id).remove();
 }
@@ -29,8 +29,8 @@ function goNext(idPostit){
 function postit2(){
     var postit2 = "";
     postit2='<div id='+idPostit+' class="postit">Task ' +
-    '<span class="glyphicon glyphicon-arrow-right" onclick="goNext('+idPostit+','+0+')"></span>' +
-    '<span class="glyphicon glyphicon-remove" onclick="remove('+idPostit+')"></div>';
+    '<span class="glyphicon glyphicon-arrow-right" onclick="goNext('+idPostit+')"></span>' +
+    '<span class="glyphicon glyphicon-remove" onclick="deletePostit('+idPostit+')"></div>';
 
     idPostit++;
 
