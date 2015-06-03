@@ -5,7 +5,7 @@ function postit(){
     postit='<div id='+idPostit+' class="postit">User story ' +
     '<span class="glyphicon glyphicon-arrow-right" onclick="goDone('+idPostit+')"></span>' +
     '<span class="glyphicon glyphicon-remove" onclick="deletePostit('+idPostit+')"></span>' +
-    '<textarea style=""></textarea></div>';
+    '<div><textarea rows="2" cols="16" style="resize:none"></textarea></div></div>';
 
     idPostit++;
 
