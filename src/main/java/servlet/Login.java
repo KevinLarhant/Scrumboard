@@ -40,6 +40,6 @@ public class Login extends HttpServlet {
 //            request.getSession().setAttribute("login", login);
 //        }
 
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("Scrumboard.jsp");
     }
 }
