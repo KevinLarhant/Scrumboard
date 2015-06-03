@@ -16,16 +16,14 @@ function remove(idPostit){
     $(id).remove();
 }
 
-function goNext(idPostit, zone){
+function goNext(idPostit){
     var id = "#"+idPostit;
 
-    if(zone == 0) {
+    if($(id).parent().attr('class') == 'zoneTODO') {
         $('.zoneInProgress').append($(id));
-        zone++;
-    } else {
+    } else if($(id).parent().attr('class') == 'zoneInProgress') {
         $('.zoneDone').append($(id));
     }
-
 }
 
 function postit2(){
