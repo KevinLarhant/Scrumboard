@@ -2,7 +2,7 @@
 var idPostit=0;
 function postit(){
     var postit = "";
-    postit='<div id='+idPostit+' class="postit">Cool c\'est une user story ' +
+    postit='<div id='+idPostit+' class="postit">User story ' +
     '<span class="glyphicon glyphicon-arrow-right" onclick="goDone('+idPostit+')"></span>' +
     '<span class="glyphicon glyphicon-remove" onclick="remove('+idPostit+')"></div>';
 
@@ -30,7 +30,7 @@ function goNext(idPostit, zone){
 
 function postit2(){
     var postit2 = "";
-    postit2='<div id='+idPostit+' class="postit">Cool c\'est une user story ' +
+    postit2='<div id='+idPostit+' class="postit">Task ' +
     '<span class="glyphicon glyphicon-arrow-right" onclick="goNext('+idPostit+','+0+')"></span>' +
     '<span class="glyphicon glyphicon-remove" onclick="remove('+idPostit+')"></div>';
 
